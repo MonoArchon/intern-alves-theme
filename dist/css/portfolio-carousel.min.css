@@ -1,0 +1,211 @@
+.pcw-carousel {
+  --pcw-columns: 3;
+  --pcw-gap: 14px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 52px 56px;
+}
+.pcw-carousel .pcw-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+.pcw-carousel .pcw-track {
+  display: flex;
+  gap: var(--pcw-gap);
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: transform;
+}
+.pcw-carousel .pcw-slide {
+  flex: 0 0 calc((100% - var(--pcw-gap) * (var(--pcw-columns) - 1)) / var(--pcw-columns));
+  min-width: 0;
+  box-sizing: border-box;
+}
+.pcw-carousel .pcw-card {
+  background: #fff;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.pcw-carousel .pcw-image {
+  display: block;
+  width: 100%;
+  height: 272px;
+  overflow: hidden;
+  background: #eee;
+}
+.pcw-carousel .pcw-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.45s ease;
+}
+.pcw-carousel .pcw-image:hover img {
+  transform: scale(1.035);
+}
+.pcw-carousel .pcw-content {
+  padding: 20px 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.pcw-carousel .pcw-category {
+  margin-bottom: 7px;
+  color: #df8589;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.pcw-carousel .pcw-title {
+  margin: 0 0 24px;
+  color: #111;
+  font-size: 24px;
+  line-height: 1.28;
+  font-weight: 500;
+  min-height: 68px;
+}
+.pcw-carousel .pcw-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 11px 22px;
+  background: #df8589;
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.pcw-carousel .pcw-button:hover, .pcw-carousel .pcw-button:focus {
+  background: #d47479;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.pcw-carousel .pcw-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  width: 42px;
+  height: 42px;
+  margin-top: -21px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #df8589;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+.pcw-carousel .pcw-arrow:hover {
+  background: #d47479;
+  transform: scale(1.04);
+}
+.pcw-carousel .pcw-arrow:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+.pcw-carousel .pcw-arrow span {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 33px;
+  font-weight: 300;
+  line-height: 1;
+  margin-top: -4px;
+}
+.pcw-carousel .pcw-arrow.is-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+.pcw-carousel .pcw-prev {
+  left: 0;
+}
+.pcw-carousel .pcw-next {
+  right: 0;
+}
+.pcw-carousel .pcw-pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.pcw-carousel .pcw-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  background: #ead0d1;
+  cursor: pointer;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+.pcw-carousel .pcw-dot.is-active {
+  width: 28px;
+  background: #df8589;
+}
+.pcw-carousel .pcw-dot:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+}
+
+@media (max-width: 1024px) {
+  .pcw-carousel {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  .pcw-carousel .pcw-image {
+    height: 240px;
+  }
+  .pcw-carousel .pcw-title {
+    font-size: 21px;
+  }
+  .pcw-carousel .pcw-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .pcw-carousel {
+    padding-left: 38px;
+    padding-right: 38px;
+    padding-bottom: 48px;
+  }
+  .pcw-carousel .pcw-image {
+    height: 250px;
+  }
+  .pcw-carousel .pcw-title {
+    font-size: 22px;
+  }
+  .pcw-carousel .pcw-arrow {
+    width: 34px;
+    height: 40px;
+  }
+  .pcw-carousel .pcw-arrow span {
+    font-size: 28px;
+  }
+  .pcw-carousel .pcw-prev {
+    left: 0;
+  }
+  .pcw-carousel .pcw-next {
+    right: 0;
+  }
+}
+
+/*# sourceMappingURL=portfolio-carousel.min.css.map*/

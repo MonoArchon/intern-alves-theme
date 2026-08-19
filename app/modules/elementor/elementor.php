@@ -35,10 +35,16 @@ final class Custom_Elementor {
     add_action( 'elementor/element/post/document_settings/before_section_end', [ $this, 'init_page_settings_controls' ] );
   }
 
-  public function init_widgets(): void {
-    // Register widgets (class is autoloaded, no need to include)
-    Plugin::instance()->widgets_manager->register( new Elem_Header() );
-  }
+public function init_widgets(): void {
+    // Register widgets (classes are autoloaded, no need to include)
+    Plugin::instance()->widgets_manager->register(
+        new Elem_Header()
+    );
+
+    Plugin::instance()->widgets_manager->register(
+        new Elem_Portfolio_Carousel()
+    );
+}
 
   public function init_dynamic_tags( $dynamic_tags ): void {
     \Elementor\Plugin::$instance->dynamic_tags->register_group( 'app', [
