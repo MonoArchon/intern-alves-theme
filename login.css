@@ -1,0 +1,142 @@
+/* ================================
+   Custom WordPress Login
+   ================================ */
+
+:root {
+    --bg: #080808;
+    --card: #101010;
+    --border: #292929;
+    --text: #ffffff;
+    --muted: #999999;
+    --neon: #00f5c8;
+    --neon-hover: #00ffd0;
+}
+
+/* Page */
+body.login {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Login container */
+#login {
+    width: 380px;
+    padding: 8% 0 0;
+}
+
+/* Logo */
+.login h1 a {
+    transition: filter 0.25s ease, opacity 0.25s ease;
+}
+
+.login h1 a:hover {
+    filter: brightness(0)
+            saturate(100%)
+            invert(78%)
+            sepia(90%)
+            saturate(1000%)
+            hue-rotate(130deg)
+            brightness(105%);
+    opacity: 1;
+}
+
+/* Login box */
+.login form {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+
+    padding: 32px;
+}
+
+/* Labels */
+.login label {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Inputs */
+.login input[type="text"],
+.login input[type="password"] {
+    background: #080808;
+    border: 1px solid #303030;
+    border-radius: 7px;
+
+    color: #ffffff;
+    padding: 10px 12px;
+
+    box-shadow: none;
+    transition: 0.2s ease;
+}
+
+/* Input focus */
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-color: var(--neon);
+    box-shadow: 0 0 0 1px var(--neon);
+}
+
+/* Remember me */
+.login .forgetmenot label {
+    color: var(--muted);
+}
+
+/* Login button */
+.wp-core-ui .button-primary {
+    background: var(--neon);
+    border-color: var(--neon);
+    color: #050505;
+
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 15px;
+
+    padding: 4px 20px;
+    min-height: 42px;
+
+    box-shadow: none;
+    transition: all 0.2s ease;
+}
+
+/* Button hover */
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+    background: var(--neon-hover);
+    border-color: var(--neon-hover);
+    color: #050505;
+
+    transform: translateY(-1px);
+    box-shadow: 0 0 20px rgba(0, 245, 200, 0.25);
+}
+
+/* Links */
+.login #nav a,
+.login #backtoblog a {
+    color: var(--neon) !important;
+    transition: 0.2s ease;
+}
+
+.login #nav a:hover,
+.login #backtoblog a:hover {
+    color: #ffffff !important;
+}
+
+/* Password visibility icon */
+.login .button.wp-hide-pw {
+    color: var(--neon);
+}
+
+/* Error / success messages */
+.login .message,
+.login #login_error {
+    background: #101010;
+    border-left: 4px solid var(--neon);
+    color: #ffffff;
+    border-radius: 6px;
+}
+
+/* Remove WordPress back-to-blog spacing */
+.login #backtoblog {
+    padding-top: 20px;
+}

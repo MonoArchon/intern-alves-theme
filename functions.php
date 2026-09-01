@@ -5,3 +5,11 @@
 defined( 'ABSPATH' ) or exit;
 
 require_once 'app/app.php';
+
+function custom_login_css() {
+    wp_enqueue_style( 
+        'custom-login', 
+        get_stylesheet_directory_uri() . '/login.css' 
+        );
+    }
+add_action('login_enqueue_scripts', 'custom_login_css');
